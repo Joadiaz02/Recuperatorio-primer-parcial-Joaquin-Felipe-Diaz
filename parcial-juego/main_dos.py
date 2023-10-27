@@ -71,7 +71,7 @@ while bandera:
                 ventana.blit(puntos,(600,120))
                 numero = numero_random(lista_preguntas)
                 pregunta_elegida = elegir_pregunta(lista_preguntas,numero)
-                print(pregunta_elegida)
+                #print(pregunta_elegida)
                 pregunta_impresa = fuente.render(str(pregunta_elegida[0]),True,AZUL_CLARO,BLANCO)
                 ventana.blit(pregunta_impresa,(100,200))
                 valor_rojo = pregunta_elegida[3]
@@ -80,7 +80,7 @@ while bandera:
                 azul_impreso = fuente.render(str(valor_azul),True,BLANCO,AZUL)
                 ventana.blit(rojo_impreso,(250,480))
                 ventana.blit(azul_impreso,(500,480))
-                
+                pygame.display.update()
         #BOTON ROJO
         if event.type == pygame.MOUSEBUTTONDOWN and user_answer == "":
             try:
@@ -106,7 +106,7 @@ while bandera:
             try:
                 #finalizar = fuente.render("Perdiste \n Termino el juego",True,ROJO,AZUL)
                 #ventana.blit(finalizar,(250,300))
-                
+                tiempo_final = 0
                 ventana.blit(fondo_game_over,(0,0))
                 puntos = fuente.render(f"Puntaje Final: {puntaje}",True,AZUL,ROJO)
                 ventana.blit(puntos,(300,500))
